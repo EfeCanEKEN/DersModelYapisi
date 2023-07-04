@@ -15,7 +15,7 @@ namespace DersModelYapisi.Controllers
             //  CartProductViewModel 
             var cartProduct1 = new CartProductViewModel
             {
-                Id = 1,
+                Id = product1.Id,
                 Product = product1,
                 Quantity = 5,
                 Price = product1.Price,  
@@ -26,7 +26,7 @@ namespace DersModelYapisi.Controllers
             };
             var cartProduct2 = new CartProductViewModel
             {
-                Id = 2,
+                Id = product2.Id,
                 Product = product2,
                 Quantity = 3,
                 Price = product2.Price,
@@ -37,14 +37,14 @@ namespace DersModelYapisi.Controllers
             };
             var cartProduct3 = new CartProductViewModel
             {
-                Id = 3,
+                Id = product3.Id,
                 Product = product3,
                 Quantity = 2,
                 Price = product3.Price,
                 TotalPrice = 0,
                 Tax = 0,
                 TotalPriceWithTax = 0,
-                
+                TotalProduct = 0
             };
 
             cartProduct1.TotalProduct = cartProduct1.Price * cartProduct1.Quantity;
@@ -61,7 +61,7 @@ namespace DersModelYapisi.Controllers
             var totalPriceWithTax = totalPrice + tax;
 
 
-            // View'e dönülecek bir view modelimiz
+            // View'e dönülecek view modelimiz
             var viewModel = new CartProductViewModel
             {
                 CartProducts = cartProducts,

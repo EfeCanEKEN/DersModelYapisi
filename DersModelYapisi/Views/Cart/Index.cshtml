@@ -1,8 +1,8 @@
 ﻿@model CartProductViewModel
 
 
-<table class="table">
-    <thead>
+<table class="table" style="border: 7px inset #800000; ">
+    <thead style="background-color:red">
         <tr>
             <th>Ürün</th>
             <th>Miktar</th>
@@ -21,7 +21,7 @@
             </tr>
         }
     </tbody>
-    <tfoot>
+    <tfoot style="font-weight: bold;" class="table-danger">
         <tr>
             <td colspan="3">Toplam Tutar:</td>
             <td>@Model.TotalPrice.ToString("C")</td>
