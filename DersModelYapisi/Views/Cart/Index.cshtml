@@ -1,0 +1,38 @@
+﻿@model CartProductViewModel
+
+
+<table class="table" style="border: 7px inset #800000; ">
+    <thead style="background-color:red">
+        <tr>
+            <th>Ürün</th>
+            <th>Miktar</th>
+            <th>Birim Fiyat</th>
+            <th>Toplam Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartProduct in Model.CartProducts)
+        {
+            <tr>
+                <td>@cartProduct.Product.Name</td>
+                <td>@cartProduct.Quantity</td>
+                <td>@cartProduct.Price.ToString("C")</td>
+                <td>@cartProduct.TotalProduct.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot style="font-weight: bold;" class="table-danger">
+        <tr>
+            <td colspan="3">Toplam Tutar:</td>
+            <td>@Model.TotalPrice.ToString("C")</td>
+        </tr>
+        <tr>
+            <td colspan="3">KDV:</td>
+            <td>@Model.Tax.ToString("C")</td>
+        </tr>
+        <tr>
+            <td colspan="3">KDV Dahil Toplam Tutar:</td>
+            <td>@Model.TotalPriceWithTax.ToString("C")</td>
+        </tr>
+    </tfoot>
+</table>
